@@ -81,10 +81,12 @@ Use the addFlavor function below to do the following:
 
   For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
+// let arr = originalFlavors; //for my own testing
+// let str = "Rainbow Sherbert"; //for my own testing
 
-
-function addFlavor(/*your code here*/){
- /*your code here*/
+function addFlavor(arr, str){
+  arr.unshift(str);
+  return arr;
 }
 
 
@@ -99,8 +101,9 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(arr){
+  arr.pop();
+  return arr;
 }
 
 
@@ -116,8 +119,8 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(arr, i){
+  return (arr[i]);
 }
 
 
@@ -136,11 +139,10 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(arr, flav){
+  arr.splice(arr.indexOf(flav),1); //this is slick, i like this a lot
+  return arr;
 }
-
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
@@ -162,8 +164,15 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(arr, str){
+  let result = [];
+
+  for (let i=0; i<arr.length; i++){
+    if (arr[i].includes(str)){
+      result.push(arr[i]);
+    }
+  }
+  return result;
 }
 
 
